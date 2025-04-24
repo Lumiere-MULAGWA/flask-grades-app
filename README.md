@@ -8,18 +8,18 @@
 
 ```
 flask-grades-app
-├── app.py                      # Code principal de l'application Flask
-├── templates                   # Dossier contenant les fichiers HTML
-│   ├── index.html              # Page d'accueil
-│   ├── grades_list.html        # Page pour afficher les notes des étudiants
-│   ├── courses_list.html       # Page pour afficher les cours et les étudiants inscrits
-│   └── add_student_to_course.html # Page pour ajouter un étudiant à un cours
-├── static                      # Dossier contenant les fichiers statiques (CSS, JS)
+├── app.py                     
+├── templates                   
+│   ├── index.html              
+│   ├── grades_list.html        
+│   ├── courses_list.html      
+│   └── add_student_to_course.html 
+├── static                     
 │   ├── css
-│   │   └── styles.css          # Fichiers CSS pour le style de l'application
+│   │   └── styles.css          
 │   └── js
-│       └── scripts.js          # Fichiers JavaScript pour les interactions (si nécessaire)
-└── README.md                   # Documentation du projet
+│       └── scripts.js          
+└── README.md                   
 ```
 
 ---
