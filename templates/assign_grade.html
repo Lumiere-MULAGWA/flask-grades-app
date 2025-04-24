@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Grade</title>
+</head>
+<body>
+    <h1>Assign Grade to Student {{ student_id }}</h1>
+    {% if message %}
+        <p style="color: green;">{{ message }}</p>
+    {% elif error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form method="POST">
+        <label for="course">Course:</label>
+        <input type="text" id="course" name="course" required>
+        <br>
+        <label for="grade">Grade:</label>
+        <input type="text" id="grade" name="grade" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{{ url_for('get_grades') }}">Back to Grades List</a>
+    <br>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
