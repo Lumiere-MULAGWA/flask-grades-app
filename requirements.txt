@@ -12,3 +12,4 @@ flask_socketio
 flask_admin
 SQLite3-0611
 gunicorn
+requests
