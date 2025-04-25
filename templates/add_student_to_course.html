@@ -29,32 +29,82 @@
 </body>
 </html> -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr"></html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Student to {{ course_name }}</title>
+    <title>Ajouter un étudiant à {{ course_name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        select, input, button {
+            margin-top: 5px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        p {
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Add Student to {{ course_name }}</h1>
+    <h1>Ajouter un étudiant à {{ course_name }}</h1>
     {% if message %}
         <p style="color: green;">{{ message }}</p>
     {% elif error %}
         <p style="color: red;">{{ error }}</p>
     {% endif %}
     <form method="POST">
-        <label for="student_id">Select Student:</label>
+        <label for="student_id">Sélectionner un étudiant :</label>
         <select id="student_id" name="student_id" required>
             {% for student in students %}
             <option value="{{ student.id }}">{{ student.name }} ({{ student.email }})</option>
             {% endfor %}
         </select>
         <br>
-        <label for="grade">Grade:</label>
+        <label for="grade">Note :</label>
         <input type="text" id="grade" name="grade" required>
         <br>
-        <button type="submit">Add Student</button>
+        <button type="submit">Ajouter l'étudiant</button>
     </form>
-    <a href="/courses">Back to Courses</a>
+    <a href="/courses">Retour aux cours</a>
 </body>
 </html>

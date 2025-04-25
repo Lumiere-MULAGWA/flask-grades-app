@@ -105,7 +105,7 @@ import requests
 app = Flask(__name__)
 
 # URL du service d'inscription des étudiants
-STUDENT_SERVICE_URL = "http://127.0.0.1:5000"
+STUDENT_SERVICE_URL = "https://flask-student-app-3.onrender.com/students"
 grades_by_course = {
     "Mathematics": {},
     "Physics": {},

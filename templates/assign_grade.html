@@ -1,28 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr"></html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assign Grade</title>
+    <title>Attribuer une Note</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Assign Grade to Student {{ student_id }}</h1>
+    <h1>Attribuer une Note à l'Étudiant {{ student_id }}</h1>
     {% if message %}
         <p style="color: green;">{{ message }}</p>
     {% elif error %}
         <p style="color: red;">{{ error }}</p>
     {% endif %}
     <form method="POST">
-        <label for="course">Course:</label>
-        <input type="text" id="course" name="course" required>
-        <br>
-        <label for="grade">Grade:</label>
-        <input type="text" id="grade" name="grade" required>
-        <br>
-        <button type="submit">Submit</button>
+        <label for="course">Cours :</label>
+        <input type="text" id="course" name="course" placeholder="Nom du cours" required>
+        <label for="grade">Note :</label>
+        <input type="text" id="grade" name="grade" placeholder="Note de l'étudiant" required>
+        <button type="submit">Soumettre</button>
     </form>
-    <a href="{{ url_for('get_grades') }}">Back to Grades List</a>
-    <br>
-    <a href="{{ url_for('index') }}">Back to Home</a>
+    <p><a href="{{ url_for('get_grades') }}">Retour à la liste des notes</a></p>
+    <p><a href="{{ url_for('index') }}">Retour à l'accueil</a></p>
 </body>
 </html>

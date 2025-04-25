@@ -1,55 +1,55 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses</title>
-</head>
-<body>
-    <h1>Courses</h1>
-    {% for course, students in courses.items() %}
-    <h2>{{ course }}</h2>
-    <p><a href="/courses/{{ course }}/add_student">Add Student to {{ course }}</a></p>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Faculty</th>
-            <th>Grade</th>
-        </tr>
-        {% for student in students %}
-        <tr>
-            <td>{{ student.id }}</td>
-            <td>{{ student.name }}</td>
-            <td>{{ student.email }}</td>
-            <td>{{ student.faculty }}</td>
-            <td>{{ student.grade }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-    {% endfor %}
-</body>
-</html> -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses</title>
+    <title>Cours</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Courses</h1>
+    <h1>Liste des Cours</h1>
     {% for course, students in courses.items() %}
     <h2>{{ course }}</h2>
-    <p><a href="/courses/{{ course }}/add_student">Add Student to {{ course }}</a></p>
-    <table border="1">
+    <p><a href="/courses/{{ course }}/add_student">Ajouter un étudiant au cours {{ course }}</a></p>
+    <table>
         <tr>
             <th>ID</th>
-            <th>Name</th>
+            <th>Nom</th>
             <th>Email</th>
-            <th>Faculty</th>
-            <th>Grade</th>
+            <th>Faculté</th>
+            <th>Note</th>
         </tr>
         {% for student in students %}
         <tr>

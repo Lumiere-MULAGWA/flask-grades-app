@@ -1,60 +1,55 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Grades</title>
-</head>
-<body>
-    <h1>Student Grades</h1>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Faculty</th>
-            <th>Grades</th>
-            <th>Actions</th>
-        </tr>
-        {% for student in students %}
-        <tr>
-            <td>{{ student.id }}</td>
-            <td>{{ student.name }}</td>
-            <td>{{ student.email }}</td>
-            <td>{{ student.faculty }}</td>
-            <td>
-                {% if student.grades %}
-                    <ul>
-                        {% for course, grade in student.grades.items() %}
-                        <li>{{ course }}: {{ grade }}</li>
-                        {% endfor %}
-                    </ul>
-                {% else %}
-                    No grades assigned
-                {% endif %}
-            </td>
-            <td><a href="/grades/{{ student.id }}">Assign Grade</a></td>
-        </tr>
-        {% endfor %}
-    </table>
-</body>
-</html> -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr"></html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Grades</title>
+    <title>Notes des Étudiants</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Student Grades</h1>
-    <table border="1">
+    <h1>Notes des Étudiants</h1>
+    <table>
         <tr>
             <th>ID</th>
-            <th>Name</th>
+            <th>Nom</th>
             <th>Email</th>
-            <th>Faculty</th>
-            <th>Grades</th>
+            <th>Faculté</th>
+            <th>Notes</th>
         </tr>
         {% for student in students %}
         <tr>
@@ -66,11 +61,11 @@
                 {% if student.grades %}
                     <ul>
                         {% for course, grade in student.grades.items() %}
-                        <li>{{ course }}: {{ grade }}</li>
+                        <li>{{ course }} : {{ grade }}</li>
                         {% endfor %}
                     </ul>
                 {% else %}
-                    No grades assigned
+                    Pas de notes attribuées
                 {% endif %}
             </td>
         </tr>
